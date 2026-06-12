@@ -1,0 +1,75 @@
+# Dependencies
+node_modules/
+
+
+# Production build
+build/
+dist/
+
+# Coverage reports
+coverage/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache
+.cache/
+.parcel-cache/
+.eslintcache
+
+# Next.js
+.next/
+out/
+
+# Vite
+vite.svg
+
+# TypeScript
+*.tsbuildinfo
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+
+# npm/yarn/pnpm
+.npm
+.pnp
+.pnp.js
+
+# Storybook
+storybook-static/
+
+# React Native (if applicable)
+.expo/
+.expo-shared/
+
+# Misc
+*.local
+
+guidelines
