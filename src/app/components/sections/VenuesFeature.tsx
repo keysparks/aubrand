@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { MapPin, Navigation } from 'lucide-react';
 import { SectionLabel } from '../SectionLabel';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
-import circleLogo from 'figma:asset/ef07ce09bd9b8f41325ee46380aeccecf54b6100.png';
+import circleLogo from '../../../assets/ef07ce09bd9b8f41325ee46380aeccecf54b6100.png';
 import venue01 from '../../../imports/venue01.jpg';
 import venue02 from '../../../imports/venue02.jpg';
 
