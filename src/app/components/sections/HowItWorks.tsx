@@ -56,7 +56,6 @@ const steps = [
     accentRgb: '127,169,211',
   },
   {
-    
     Icon: IconCalendar,
     title: 'PLAN TO GO or CHECK IN',
     description: 'Hear venue details, events, specials, and see who else plans to go there.',
@@ -238,8 +237,6 @@ function CentralOrb() {
   );
 }
 
-/* ——— (removed GalaxyBackground — replaced by inline radar bg in section) ——— */
-
 /* ——— Main Section ——— */
 export function HowItWorks() {
   return (
@@ -285,7 +282,7 @@ export function HowItWorks() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
         {/* Heading */}
         <div className="text-center max-w-4xl mx-auto mb-14 md:mb-16">
-          <SectionLabel  center><p style={{fontSize: '68px'}}>How it works</p></SectionLabel>
+          <SectionLabel center>How it works</SectionLabel>
           <motion.h2
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }} className="mb-5"

@@ -150,8 +150,7 @@ export function MessagingFeature() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full flex justify-center items-center lg:order-1"
-            style={{ minHeight: 580 }}
+            className="relative w-full flex justify-center items-center lg:order-1 px-2 sm:px-0 min-h-[520px] sm:min-h-[580px]"
           >
             {/* Radar rings behind panel */}
             {[600, 480, 360, 245].map((size, i) => (
@@ -173,9 +172,9 @@ export function MessagingFeature() {
               whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="relative overflow-hidden flex flex-col"
+              className="relative overflow-hidden flex flex-col w-full sm:w-[420px]"
               style={{
-                width: 420,
+                maxWidth: 420,
                 borderRadius: 34,
                 background: `radial-gradient(circle at 24% 0%, rgba(191,44,64,0.11), transparent 34%), linear-gradient(180deg, rgba(18,20,30,0.94), rgba(7,8,13,0.92))`,
                 border: '1px solid rgba(255,255,255,0.13)',
@@ -203,12 +202,12 @@ export function MessagingFeature() {
               {/* — Match + Venue row — */}
               <div className="flex items-center justify-between px-4 pb-4 gap-3">
                 {/* Chloe matched chip */}
-                <div className="flex items-center gap-2.5 px-3 py-2 rounded-2xl relative overflow-hidden flex-shrink-0"
+                <div className="flex items-center gap-2.5 px-3 py-2 rounded-2xl relative overflow-hidden min-w-0"
                   style={{ background: 'rgba(191,44,64,0.10)', border: '1px solid rgba(191,44,64,0.26)', backdropFilter: 'blur(12px)' }}>
                   <div className="w-7 h-7 rounded-full overflow-hidden flex-shrink-0" style={{ border: '1.5px solid rgba(191,44,64,0.50)', boxShadow: '0 0 10px rgba(191,44,64,0.25)' }}>
                     <ImageWithFallback src={AVATAR_URL} alt="Chloe" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.92)', fontWeight: 600, lineHeight: 1.2 }}><span style={{ color: '#fff' }}>Chloe</span> matched</p>
                     <p style={{ fontSize: 10, color: 'rgba(255,255,255,0.42)', lineHeight: 1 }}>with you! Say hello.</p>
                   </div>

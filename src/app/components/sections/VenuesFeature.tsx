@@ -109,13 +109,13 @@ function PhoneMockup() {
       />
 
       {/* Radar arc behind phone */}
-      <div className="absolute pointer-events-none" style={{
+      <div className="absolute pointer-events-none hidden sm:block" style={{
         top: '50%', left: '55%', width: 420, height: 320,
         transform: 'translate(-50%, -50%)',
         border: '1px solid rgba(127,169,211,0.08)',
         borderRadius: '50%',
       }} />
-      <div className="absolute pointer-events-none" style={{
+      <div className="absolute pointer-events-none hidden sm:block" style={{
         top: '50%', left: '55%', width: 540, height: 420,
         transform: 'translate(-50%, -50%)',
         border: '1px solid rgba(191,44,64,0.06)',
@@ -124,8 +124,8 @@ function PhoneMockup() {
 
       {/* Phone wrapper */}
       <motion.div
-        className="relative"
-        style={{ width: 300, transformStyle: 'preserve-3d', filter: 'drop-shadow(0 40px 100px rgba(0,0,0,0.62)) drop-shadow(0 0 48px rgba(127,169,211,0.12))' }}
+        className="relative w-[240px] sm:w-[270px] lg:w-[300px]"
+        style={{ transformStyle: 'preserve-3d', filter: 'drop-shadow(0 40px 100px rgba(0,0,0,0.62)) drop-shadow(0 0 48px rgba(127,169,211,0.12))' }}
         animate={{ rotateY: [-4, -2, -4], rotateX: [2, 0, 2] }}
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
       >
@@ -243,11 +243,11 @@ function PhoneMockup() {
         </div>
 
         {/* Card 1 — upper left, overlapping left edge of phone */}
-        <div className="absolute z-20" style={{ top: '8%', left: -100, width: 250 }}>
+        <div className="absolute z-20 w-[150px] sm:w-[200px] lg:w-[250px] left-[-20px] sm:left-[-60px] lg:left-[-100px]" style={{ top: '8%' }}>
           <VenueCard venue={venueCards[0]} delay={0.4} />
         </div>
         {/* Card 2 — lower right, overlapping right edge of phone */}
-        <div className="absolute z-20" style={{ bottom: '8%', right: -100, width: 250 }}>
+        <div className="absolute z-20 w-[150px] sm:w-[200px] lg:w-[250px] right-[-20px] sm:right-[-60px] lg:right-[-100px]" style={{ bottom: '8%' }}>
           <VenueCard venue={venueCards[2]} delay={0.65} />
         </div>
       </motion.div>

@@ -213,9 +213,9 @@ export function DiscoverFeature() {
           {/* ===== Left — Card Fan Stack ===== */}
           <motion.div
             initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-            className="relative w-full flex justify-center items-center"
-            style={{ minHeight: 560 }}
+            className="relative w-full flex justify-center items-center overflow-hidden min-h-[340px] sm:min-h-[440px] lg:min-h-[560px]"
           >
+            <div className="origin-center scale-[0.62] sm:scale-[0.85] lg:scale-100">
             {/* Ambient glow — centred on Elena (front card at left:0) */}
             <motion.div className="absolute pointer-events-none" style={{ top: '50%', left: '140px', transform: 'translate(-50%,-50%)', width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle, rgba(191,44,64,0.13) 0%, rgba(127,169,211,0.05) 45%, transparent 65%)', filter: 'blur(48px)', willChange: 'transform' }}
               animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.75, 0.4] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
@@ -273,6 +273,7 @@ export function DiscoverFeature() {
               <div className="absolute bottom-[-30px] left-[30%] -translate-x-1/2 w-[320px] h-[60px] rounded-full pointer-events-none"
                 style={{ background: 'radial-gradient(ellipse, rgba(191,44,64,0.20) 0%, transparent 75%)', filter: 'blur(22px)' }}
               />
+            </div>
             </div>
           </motion.div>
 
