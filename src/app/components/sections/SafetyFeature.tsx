@@ -98,15 +98,15 @@ export function SafetyFeature() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
+            className="whitespace-normal sm:whitespace-nowrap"
             style={{
               fontFamily: '"Inter Tight", sans-serif',
               fontWeight: 600,
               letterSpacing: '-0.02em',
               lineHeight: 1.1,
-              fontSize: '68px',
+              fontSize: 'clamp(38px, 9vw, 68px)',
               color: 'rgba(255,255,255,0.97)',
               marginBottom: '24px',
-              whiteSpace: 'nowrap',
             }}
           >
             You're always <span style={{ background: 'linear-gradient(90deg, #BF2C40 0%, #D75A69 46%, #7FA9D3 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>in control</span>

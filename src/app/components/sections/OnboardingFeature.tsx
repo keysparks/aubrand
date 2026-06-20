@@ -302,7 +302,7 @@ export function OnboardingFeature() {
           </motion.div>
 
           {/* ——— Left: Card Stack ——— */}
-          <div className="relative w-full min-h-[580px] lg:order-1 flex items-center justify-center">
+          <div className="relative w-full min-h-[360px] sm:min-h-[460px] lg:min-h-[580px] lg:order-1 flex items-center justify-center overflow-hidden">
 
             {/* Radar rings behind card stack */}
             {[580, 440, 320].map((size, i) => (
@@ -318,6 +318,7 @@ export function OnboardingFeature() {
             />
 
             {/* Card scene — flat layered (no 3D transform) */}
+            <div className="origin-center scale-[0.58] sm:scale-[0.78] lg:scale-100">
             <div className="relative" style={{ width: 500, height: 560 }}>
               <PhoneVerificationCard />
               <ProfileSetupCard />
@@ -349,6 +350,7 @@ export function OnboardingFeature() {
                   initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }}
                   transition={{ duration: 1.5, delay: 1.2 }} />
               </svg>
+            </div>
             </div>
           </div>
 
