@@ -60,12 +60,12 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[100vh] w-full flex flex-col overflow-hidden bg-[#070a19]"
+      className="relative min-h-[100vh] w-full max-w-[100vw] flex flex-col overflow-hidden bg-[#070a19]"
       id="product"
     >
       {/* Background Image with parallax */}
       <motion.div
-        className="absolute inset-0 z-0 pointer-events-none w-full h-full"
+        className="absolute inset-0 z-0 pointer-events-none w-full h-full overflow-hidden"
         style={{
           x: (mousePos.x - 0.5) * -16,
           y: (mousePos.y - 0.5) * -16,
@@ -74,7 +74,7 @@ export function Hero() {
         <img
           src={heroImage}
           alt="Night city skyline"
-          className="w-[calc(100%+50px)] h-[calc(100%+170px)] object-cover object-center -ml-[25px] -mt-[25px]"
+          className="w-[calc(100%+50px)] h-[calc(100%+170px)] max-w-none object-cover object-center -ml-[25px] -mt-[25px]"
         />
         <div
           className="absolute inset-0"
@@ -164,10 +164,10 @@ export function Hero() {
       <CometScene />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col min-h-screen px-6 lg:px-12">
+      <div className="relative z-10 flex flex-col min-h-screen w-full px-6 lg:px-12 overflow-hidden">
 
         {/* Headline block — upper area below nav */}
-        <div className="flex flex-col items-center pt-[242px] sm:pt-[258px] md:pt-[274px]">
+        <div className="flex flex-col items-center pt-[180px] sm:pt-[258px] md:pt-[274px]">
           <motion.h1
             initial={{ opacity: 0, y: 40, filter: 'blur(12px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -207,7 +207,7 @@ export function Hero() {
         {/* Bottom row — store buttons + QR */}
         <motion.div
           id="hero-download"
-          className="flex flex-row items-center justify-center gap-4 pb-10"
+          className="flex flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 pb-10 px-2"
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -216,7 +216,7 @@ export function Hero() {
           <motion.button
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            className="relative flex items-center gap-3 px-5 py-2.5 rounded-2xl cursor-pointer overflow-hidden"
+            className="relative flex items-center gap-3 px-5 py-2.5 rounded-2xl cursor-pointer overflow-hidden flex-shrink-0"
             style={{
               background: 'rgba(10,12,28,0.75)',
               backdropFilter: 'blur(20px)',
@@ -236,7 +236,7 @@ export function Hero() {
           <motion.button
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            className="relative flex items-center gap-3 px-5 py-2.5 rounded-2xl cursor-pointer overflow-hidden"
+            className="relative flex items-center gap-3 px-5 py-2.5 rounded-2xl cursor-pointer overflow-hidden flex-shrink-0"
             style={{
               background: 'rgba(10,12,28,0.75)',
               backdropFilter: 'blur(20px)',
@@ -254,7 +254,7 @@ export function Hero() {
 
           {/* QR Code */}
           <div
-            className="flex flex-col items-center gap-1 rounded-2xl p-2"
+            className="flex flex-col items-center gap-1 rounded-2xl p-2 flex-shrink-0"
             style={{
               background: 'rgba(10,12,28,0.75)',
               backdropFilter: 'blur(20px)',
