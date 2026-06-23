@@ -9,7 +9,7 @@ export function SectionLabel({ children, center = false }: { children: React.Rea
       transition={{ duration: 0.6 }}
       style={{
         fontFamily: '"Inter Tight", sans-serif',
-        fontSize: '14px',
+        fontSize: '34px',
         fontWeight: 600,
         letterSpacing: '0.16em',
         color: '#E8364E',

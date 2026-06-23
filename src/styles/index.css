@@ -3,7 +3,11 @@
 @import './theme.css';
 @font-face {
   font-family: 'Elephant';
-  src: url('@/assets/fonts/Elephant-Regular.ttf') format('truetype');
+  src: url('./assets/fonts/Elephant.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+}
+
+.font-elephant {
+  font-family: 'Elephant', serif;
 }

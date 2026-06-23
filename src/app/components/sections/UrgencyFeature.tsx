@@ -56,8 +56,7 @@ function MasterCountdown() {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="absolute z-50"
-      style={{ top: 0, left: '50%', transform: 'translateX(-50%)', whiteSpace: 'nowrap' }}
+      className="absolute left-1/2 -translate-x-1/60 top-[30px] sm:top-[-10px] scale-75 sm:scale-100 origin-center z-50 whitespace-nowrap"
     >
       <motion.div animate={{ y: [0, -4, 0] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}>
         <div
@@ -117,7 +116,9 @@ function LikeCard({ profile, delay, floatDelay }: {
           border: `1px solid ${accentA}${isRed ? '0.46' : '0.38'})`,
           boxShadow: `0 36px 100px rgba(0,0,0,0.62), 0 0 58px ${accentA}${isRed ? '0.18' : '0.14'}), inset 0 1px 0 rgba(255,255,255,0.10)`,
           backdropFilter: 'blur(18px)',
-        }}>
+        }}
+        className='scale-75 sm:scale-100 origin-center'
+        >
           {/* Top highlight */}
           <div className="absolute top-0 left-4 right-4 h-px" style={{ background: `linear-gradient(90deg, transparent, ${accentA}0.38), transparent)` }} />
 
@@ -238,7 +239,7 @@ export function UrgencyFeature() {
       ))}
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* ===== Left — Text Content (unchanged) ===== */}
           <motion.div
@@ -296,8 +297,10 @@ export function UrgencyFeature() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="relative w-full flex justify-center items-center"
-            style={{ minHeight: 520 }}
+            className="relative min-w-0 flex justify-center items-center"
+            style={{
+              minHeight: window.innerWidth < 640 ? 340 : 520
+            }}
           >
             {/* Ambient glow behind cluster */}
             <motion.div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none"
@@ -322,17 +325,17 @@ export function UrgencyFeature() {
             <OrbitDot cx={230} cy={230} radius={175} size={3} duration={13} delay={3}   color="rgba(191,44,64,0.45)" />
 
             {/* Card cluster container */}
-            <div className="relative" style={{ width: 510, height: 420 }}>
+            <div   className="relative scale-[0.72] sm:scale-[0.85] lg:scale-100 origin-top" style={{ width: 510, height: 420 }}>
               {/* Timer — centered above cards */}
               <MasterCountdown />
 
               {/* Danina — left, red */}
-              <motion.div className="absolute" style={{ left: 10, top: 72 }}>
+              <motion.div className="absolute absolute left-[10px] top-[72px] sm:left-[10px]" >
                 <LikeCard profile={likeProfiles[0]} delay={0.3} floatDelay={0.4} />
               </motion.div>
 
               {/* Mayta — right, blue */}
-              <motion.div className="absolute" style={{ left: 270, top: 72 }}>
+              <motion.div className="absolute absolute left-[200px] sm:left-[270px] top-[72px]">
                 <LikeCard profile={likeProfiles[1]} delay={0.5} floatDelay={1.0} />
               </motion.div>
 

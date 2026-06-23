@@ -286,7 +286,7 @@ export function HowItWorks() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }} className="mb-5"
-            style={{ fontFamily: '"Inter Tight", sans-serif', fontWeight: 200, letterSpacing: '-0.02em', lineHeight: 1.1, fontSize: '24px', color: 'rgba(255,255,255,0.97)' }}
+            style={{ fontFamily: '"Inter Tight", sans-serif', fontWeight: 200, letterSpacing: '-0.02em', lineHeight: 1.1, fontSize: '21px', color: 'rgba(255,255,255,0.97)' }}
           >
             <span className="text-white">Connect with people who share </span><GradientWord>your interests</GradientWord><span className="text-white">,</span>
             <br />

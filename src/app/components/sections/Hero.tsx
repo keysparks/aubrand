@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { useEffect, useRef, useState, useMemo } from 'react';
-import heroImage from "../../../imports/hero-6-2.jpg";
+import heroImage from "../../../imports/hero-6-2.png";
+import Logo from "../../../imports/image-1.png"
 import { CometScene } from '../CometScene';
 
 const AppleIcon = () => (
@@ -18,7 +19,6 @@ const GooglePlayIcon = () => (
   </svg>
 );
 
-/* ——— Minimal ambient star ——— */
 function AmbientStar({ x, y, size, delay, duration }: { x: string; y: string; size: number; delay: number; duration: number }) {
   return (
     <motion.div
@@ -63,7 +63,7 @@ export function Hero() {
       className="relative min-h-[100vh] w-full max-w-[100vw] flex flex-col overflow-hidden bg-[#070a19]"
       id="product"
     >
-      {/* Background Image with parallax */}
+      {/* z-0: Background image */}
       <motion.div
         className="absolute inset-0 z-0 pointer-events-none w-full h-full overflow-hidden"
         style={{
@@ -82,107 +82,97 @@ export function Hero() {
         />
       </motion.div>
 
-      {/* Refined depth layer */}
+      {/* z-1: Depth + light leaks */}
       <div className="absolute inset-0 z-[1] pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-t from-[#070a19] via-transparent to-[#070a19]/45" />
         <div className="absolute bottom-0 left-0 right-0 h-56 bg-gradient-to-t from-[#070a19] to-transparent" />
-
-        {/* Controlled red light leak — left */}
         <motion.div
           className="absolute top-[18%] left-[10%] w-[550px] h-[550px] rounded-full"
-          style={{
-            background: 'radial-gradient(circle, rgba(232,54,78,0.11) 0%, rgba(232,54,78,0.03) 45%, transparent 70%)',
-            filter: 'blur(90px)',
-          }}
+          style={{ background: 'radial-gradient(circle, rgba(232,54,78,0.11) 0%, rgba(232,54,78,0.03) 45%, transparent 70%)', filter: 'blur(90px)' }}
           animate={{ scale: [1, 1.28, 1], opacity: [0.28, 0.58, 0.28] }}
           transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
         />
-        {/* Controlled blue haze — right */}
         <motion.div
           className="absolute bottom-[20%] right-[8%] w-[480px] h-[480px] rounded-full"
-          style={{
-            background: 'radial-gradient(circle, rgba(153,204,255,0.09) 0%, rgba(153,204,255,0.02) 45%, transparent 70%)',
-            filter: 'blur(80px)',
-          }}
+          style={{ background: 'radial-gradient(circle, rgba(153,204,255,0.09) 0%, rgba(153,204,255,0.02) 45%, transparent 70%)', filter: 'blur(80px)' }}
           animate={{ scale: [1.15, 1, 1.15], opacity: [0.22, 0.48, 0.22] }}
           transition={{ duration: 8, delay: 2, repeat: Infinity, ease: 'easeInOut' }}
         />
-
-        {/* Thin aurora band */}
         <motion.div
           className="absolute top-[30%] left-[-8%] w-[116%] h-[100px]"
-          style={{
-            background: 'linear-gradient(90deg, transparent 5%, rgba(232,54,78,0.03) 30%, rgba(232,54,78,0.055) 50%, rgba(232,54,78,0.03) 70%, transparent 95%)',
-            filter: 'blur(28px)',
-            transform: 'rotate(-3.5deg)',
-          }}
+          style={{ background: 'linear-gradient(90deg, transparent 5%, rgba(232,54,78,0.03) 30%, rgba(232,54,78,0.055) 50%, rgba(232,54,78,0.03) 70%, transparent 95%)', filter: 'blur(28px)', transform: 'rotate(-3.5deg)' }}
           animate={{ opacity: [0.4, 0.75, 0.4], y: [0, -8, 0] }}
           transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
           className="absolute top-[62%] left-[-8%] w-[116%] h-[80px]"
-          style={{
-            background: 'linear-gradient(90deg, transparent 10%, rgba(153,204,255,0.025) 35%, rgba(153,204,255,0.05) 55%, rgba(153,204,255,0.025) 75%, transparent 90%)',
-            filter: 'blur(24px)',
-            transform: 'rotate(2deg)',
-          }}
+          style={{ background: 'linear-gradient(90deg, transparent 10%, rgba(153,204,255,0.025) 35%, rgba(153,204,255,0.05) 55%, rgba(153,204,255,0.025) 75%, transparent 90%)', filter: 'blur(24px)', transform: 'rotate(2deg)' }}
           animate={{ opacity: [0.3, 0.6, 0.3], y: [0, 6, 0] }}
           transition={{ duration: 10, delay: 4, repeat: Infinity, ease: 'easeInOut' }}
         />
       </div>
 
-      {/* Stars — reduced, dimmer */}
+      {/* z-2: Stars */}
       <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden">
         {stars.map((star, i) => (
           <AmbientStar key={`s-${i}`} x={star.x} y={star.y} size={star.size} delay={star.delay} duration={star.duration} />
         ))}
       </div>
 
-      {/* Subtle orbital rings */}
+      {/* z-2: Orbital rings */}
       <div className="absolute inset-0 z-[2] pointer-events-none overflow-hidden">
         <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="absolute top-1/2 left-1/2 rounded-full"
           style={{ width: '130vh', height: '80vh', border: '1px solid rgba(255,255,255,0.025)', transform: 'translate(-50%, -50%) rotate(-20deg)' }}
           animate={{ rotate: ['-20deg', '-18deg', '-20deg'] }}
           transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="absolute top-1/2 left-1/2 rounded-full"
           style={{ width: '165vh', height: '105vh', border: '1px solid rgba(255,255,255,0.015)', transform: 'translate(-50%, -50%) rotate(-20deg)' }}
           animate={{ rotate: ['-20deg', '-22deg', '-20deg'] }}
           transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
         />
       </div>
 
-      {/* Vignette */}
+      {/* z-3: CometScene — always BELOW hero text */}
+      <CometScene />
+
+      {/* z-4: Vignette */}
       <div
         className="absolute inset-0 z-[4] pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at center, transparent 45%, rgba(7,10,25,0.55) 100%)' }}
       />
 
-      {/* Comet avatar animation */}
-      <CometScene />
+      {/* z-10: Hero content — always on top */}
+      <div className="relative z-10 flex flex-col min-h-screen w-full overflow-hidden">
+        <div className="flex flex-col items-center w-full px-6 lg:px-12">
 
-      {/* Content */}
-      <div className="relative z-10 flex flex-col min-h-screen w-full px-6 lg:px-12 overflow-hidden">
+          <div className="h-[80px] sm:h-[110px] md:h-[110px] lg:h-[90px]" />
 
-        {/* Headline block — upper area below nav */}
-        <div className="flex flex-col items-center pt-[180px] sm:pt-[258px] md:pt-[274px]">
+ 
+          <img src={Logo} alt="ApproachU" className="h-40 -z-1 sm:h-20 sm:w-90 md:h-50 md:w-120" />
+          {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 40, filter: 'blur(12px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 1.3, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            style={{
-              fontFamily: 'Elephant, serif',
-              fontWeight: 800,
-              letterSpacing: '-0.02em',
-              lineHeight: 1.08,
-              fontSize: 'clamp(52px, 7.5vw, 108px)',
-              color: '#ffffff',
-              textAlign: 'center',
-            }}
+            className="
+              font-elephant
+              font-extrabold
+              tracking-[-0.02em]
+              leading-[1.08]
+              text-[42px]
+              sm:text-[62px]
+              md:text-[100px]
+              lg:text-[100px]
+              text-white
+              text-center
+              w-full
+              max-w-[900px]
+            "
           >
-            See who's where
+            See who&apos;s where
             <br />
             <motion.span
               style={{
@@ -191,6 +181,7 @@ export function Hero() {
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
+                display: 'block',
               }}
               animate={{ backgroundPosition: ['0% center', '100% center'] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
@@ -198,32 +189,24 @@ export function Hero() {
               meet them now
             </motion.span>
           </motion.h1>
-
         </div>
 
-        {/* Spacer — lets image scene show through */}
+        {/* Spacer */}
         <div className="flex-1" />
 
-        {/* Bottom row — store buttons + QR */}
+        {/* Store buttons */}
         <motion.div
           id="hero-download"
-          className="flex flex-row flex-wrap items-center justify-center gap-3 sm:gap-4 pb-10 px-2"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pb-10 px-4 w-full max-w-[340px] sm:max-w-none mx-auto"
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* App Store */}
           <motion.button
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            className="relative flex items-center gap-3 px-5 py-2.5 rounded-2xl cursor-pointer overflow-hidden flex-shrink-0"
-            style={{
-              background: 'rgba(10,12,28,0.75)',
-              backdropFilter: 'blur(20px)',
-              WebkitBackdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255,255,255,0.14)',
-              boxShadow: '0 8px 28px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.07)',
-            }}
+            className="relative flex items-center gap-3 px-5 py-2.5 rounded-2xl cursor-pointer overflow-hidden flex-shrink-0 w-full sm:w-auto justify-center sm:justify-start"
+            style={{ background: 'rgba(10,12,28,0.75)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.14)', boxShadow: '0 8px 28px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.07)' }}
           >
             <AppleIcon />
             <div className="flex flex-col items-start">
@@ -232,18 +215,11 @@ export function Hero() {
             </div>
           </motion.button>
 
-          {/* Google Play */}
           <motion.button
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
-            className="relative flex items-center gap-3 px-5 py-2.5 rounded-2xl cursor-pointer overflow-hidden flex-shrink-0"
-            style={{
-              background: 'rgba(10,12,28,0.75)',
-              backdropFilter: 'blur(20px)',
-              WebkitBackdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255,255,255,0.14)',
-              boxShadow: '0 8px 28px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.07)',
-            }}
+            className="relative flex items-center gap-3 px-5 py-2.5 rounded-2xl cursor-pointer overflow-hidden flex-shrink-0 w-full sm:w-auto justify-center sm:justify-start"
+            style={{ background: 'rgba(10,12,28,0.75)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.14)', boxShadow: '0 8px 28px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.07)' }}
           >
             <GooglePlayIcon />
             <div className="flex flex-col items-start">
@@ -252,16 +228,10 @@ export function Hero() {
             </div>
           </motion.button>
 
-          {/* QR Code */}
+          {/* QR — sm+ only */}
           <div
             className="flex flex-col items-center gap-1 rounded-2xl p-2 flex-shrink-0"
-            style={{
-              background: 'rgba(10,12,28,0.75)',
-              backdropFilter: 'blur(20px)',
-              WebkitBackdropFilter: 'blur(20px)',
-              border: '1px solid rgba(255,255,255,0.14)',
-              boxShadow: '0 8px 28px rgba(0,0,0,0.45)',
-            }}
+            style={{ background: 'rgba(10,12,28,0.75)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.14)', boxShadow: '0 8px 28px rgba(0,0,0,0.45)' }}
           >
             <div className="bg-white rounded-lg p-1.5">
               <svg width="72" height="72" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -318,7 +288,6 @@ export function Hero() {
             <span style={{ fontSize: '9px', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.02em' }}>Scan to download</span>
           </div>
         </motion.div>
-
       </div>
     </section>
   );
