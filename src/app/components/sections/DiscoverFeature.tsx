@@ -208,12 +208,12 @@ export function DiscoverFeature() {
       ))}
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-w-0">
 
           {/* ===== Left — Card Fan Stack ===== */}
           <motion.div
             initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-            className="relative w-full flex justify-center items-center overflow-hidden min-h-[340px] sm:min-h-[440px] lg:min-h-[560px]"
+            className="relative w-full min-w-0 flex justify-center items-center overflow-hidden min-h-[340px] sm:min-h-[440px] lg:min-h-[560px]"
           >
             <div className="origin-center scale-[0.62] sm:scale-[0.85] lg:scale-100">
             {/* Ambient glow — centred on Elena (front card at left:0) */}
@@ -281,7 +281,7 @@ export function DiscoverFeature() {
           <motion.div
             initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-6 min-w-0"
           >
             <SectionLabel>Discover</SectionLabel>
 
