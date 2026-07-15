@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 
 const AVATAR_URLS = [
   'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=200&fit=crop&crop=face',
-  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face',
   'https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=200&h=200&fit=crop&crop=face',
+  'https://images.unsplash.com/photo-1581065124660-6fb43ed9e329?w=200&h=200&fit=crop&crop=face',
   'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face',
   'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face',
-  'https://images.unsplash.com/photo-1696236537686-214907dfcd9a?w=200&h=200&fit=crop&crop=face',
-  'https://images.unsplash.com/photo-1581065124660-6fb43ed9e329?w=200&h=200&fit=crop&crop=face',
+  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face',
+  'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face',
 ];
 
 interface CometPerson {
