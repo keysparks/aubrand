@@ -298,7 +298,8 @@ export function PricingFeature() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            style={{ fontFamily: '"Inter Tight", sans-serif', fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.1, fontSize: '68px', color: 'rgba(255,255,255,0.97)', marginBottom: 20, whiteSpace: 'nowrap' }}
+            className="whitespace-normal sm:whitespace-nowrap"
+            style={{ fontFamily: '"Inter Tight", sans-serif', fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.1, fontSize: 'clamp(38px, 9vw, 68px)', color: 'rgba(255,255,255,0.97)', marginBottom: 20 }}
           >
             Choose your <GradientWord delay={0.5}>Approach</GradientWord>
           </motion.h2>

@@ -89,7 +89,7 @@ function PhoneMockup() {
       whileInView={{ opacity: 1, x: 0, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-      className="relative w-full flex justify-center items-center"
+      className="relative w-full min-w-0 flex justify-center items-center"
       style={{ minHeight: 580, perspective: '1200px' }}
     >
       {/* Ambient glow behind phone — red top-left, blue bottom-right */}
@@ -347,7 +347,7 @@ export function VenuesFeature() {
       ))}
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center min-w-0">
 
           {/* Left content */}
           <motion.div
@@ -355,7 +355,7 @@ export function VenuesFeature() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-6 min-w-0"
           >
             <SectionLabel>Venues</SectionLabel>
 
@@ -369,7 +369,7 @@ export function VenuesFeature() {
                 fontWeight: 600,
                 letterSpacing: '-0.02em',
                 lineHeight: 1.1,
-                fontSize: '68px',
+                fontSize: 'clamp(38px, 9vw, 68px)',
                 color: 'rgba(255,255,255,0.97)',
               }}
             >
